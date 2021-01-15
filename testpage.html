@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            [id$="Window"] {
+                display:none;
+            }
+
+            [id$="Window"]:target {
+                display:block;
+            }
+
+            .window {
+                width:300px;
+                height:300px;
+                overflow:hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#firstWindow">firstWindow</a>
+        <a href="#secondWindow">secondWindow</a>
+        <a href="#thirdWindow">thirdWindow</a>
+        <div class="window">
+            <div id="firstWindow" class="window">
+                firstWindow
+            </div>
+            <div id="secondWindow" class="window">
+                secondWindow
+            </div>
+            <div id="thirdWindow" class="window">
+                thirdWindow
+            </div>
+        </div>
+    </body>
+</html>
