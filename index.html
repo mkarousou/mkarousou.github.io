@@ -47,6 +47,28 @@
         body.loaded>div.preloader {
             animation: hidePreloader .5s linear .5s forwards;
         }
+		.button {
+		  padding: 10px 23px;
+		  font-size: 20px;
+		  text-align: center;
+		  cursor: pointer;
+		  outline: none;
+		  color: #fff;
+		  background-color: #4CAF50;
+		  border: none;
+		  border-radius: 15px;
+		  box-shadow: 0 9px #999;
+		  margin-bottom: 15px;
+		  margin-right: 15px;
+		}
+
+		.button:hover {background-color: #3e8e41}
+
+		.button:active {
+		  background-color: #3e8e41;
+		  box-shadow: 0 5px #666;
+		  transform: translateY(4px);
+		}
     </style>
     <script>
         window.addEventListener("load", function() {
@@ -90,10 +112,10 @@
             <!-- Brand -->
             <a class="navbar-brand" href="index.html">
             </a>
-            <!-- Toggler -->
+			<!-- Toggler -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button
             <!-- Collapse -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
@@ -142,78 +164,48 @@
                     </h1>           
                     <!-- Buttons -->
                     <div class="text-center text-md-left mt-5">
-                        <a href="#" class="btn btn-primary btn-icon" target="_blank">
-                            <span class="btn-inner--text">PLAY</span>
-                            <span class="btn-inner--icon"><i data-feather="chevron-right"></i></span>
+                        <a href="#" class="button" target="_blank">
+                            <span class="btn-inner--text">PLAY</span>                   
                         </a>
-                        <a href="#" class="btn btn-neutral btn-icon d-none d-lg-inline-block" target="_blank">Observe</a>
-                    </div>
+                        <a href="#" class="button" target="_blank">
+							<span class="btn-inner--text">OBSERVE</span>
+						</a>
+                    </div> 
                 </div>
             </div>
+			<div class="row row-grid align-items-center">
+				<div class="text-center text-md-left mt-5">
+				<h5 class="h4 lh-130 mb-3">Level selection</h5>
+					<div class="pt-4 pb-5">
+						<button class="button">Level 1</button><br>
+						<button class="button">Level 2</button><br>
+						<button class="button">Level 3</button>
+					</div>
+				</div>               
+            </div>
         </div>
-    </section>
-    <section class="slice slice-lg pt-lg-6 pb-0 pb-lg-6 bg-section-secondary">
-        <div class="container">
             <!-- Title -->
             <!-- Section title -->
-            <div class="row mb-5 justify-content-center text-center">
-                <div class="col-lg-6">         
-                </div>
-            </div>
             <!-- Card -->
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body pb-5">
-                            <div class="pt-4 pb-5">
-                                <img src="" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
-                            </div>
-                            <h5 class="h4 lh-130 mb-3"></h5>
-                            <p class="text-muted mb-0"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body pb-5">
-                            <div class="pt-4 pb-5">
-                                <img src="" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
-                            </div>
-                            <h5 class="h4 lh-130 mb-3"></h5>
-                            <p class="text-muted mb-0"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body pb-5">
-                            <div class="pt-4 pb-5">
-                                <img src="" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
-                            </div>
-                            <h5 class="h4 lh-130 mb-3"></h5>
-                            <p class="text-muted mb-0"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="position-relative" id="footer-main">
-        <div class="footer pt-lg-7 footer-dark bg-dark">
-            <!-- SVG shape -->
-            <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
-                <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class=" fill-section-secondary">
-                    <polygon points="2560 0 2560 100 0 100"></polygon>
-                </svg>
-            </div>
-            <!-- Footer -->
-                <div class="row align-items-center justify-content-md-between pb-4">
-                    <div class="col-md-6">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+		           
+		<div class="row row-grid align-items-center">
+			<div class="card-body pb-5">
+			<h5 class="h4 lh-130 mb-3">Setup</h5>
+				<div class="pt-4 pb-5">
+					<img src="" class="img-fluid img-center" style="height: 150px;" alt="image" />
+				</div>
+			</div>
+		</div>
+		<div class="row row-grid align-items-center">
+			<div class="card-body pb-5">
+				<div class="pt-4 pb-5">
+					<img src="" class="img-fluid img-center" style="height: 150px;" alt="Illustration" />
+				</div>
+				<h5 class="h4 lh-130 mb-3"></h5>
+				<p class="text-muted mb-0"></p>
+			</div>
+		</div>
+	</section>
     <!-- Core JS  -->
     <script src="assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
