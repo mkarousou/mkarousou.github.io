@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <meta name="description" content="">
     <meta name="author" content="Webpixels">
     <title>ARBot</title>
@@ -11,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/quick-website.css" id="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <style>
         @keyframes hidePreloader {
@@ -43,6 +45,7 @@
 
         body *{
             font-family: 'Hachi Maru Pop', cursive;
+            font-weight: bold;
         }
 
         body:not(.loaded)>div.preloader {
@@ -56,6 +59,7 @@
         body.loaded>div.preloader {
             animation: hidePreloader .5s linear .5s forwards;
         }
+
 		.button {
 		  padding: 10px 23px;
 		  font-size: 20px;
@@ -63,20 +67,31 @@
 		  cursor: pointer;
 		  outline: none;
 		  color: #fff;
-		  background-color: #4CAF50;
+		  background-color: #47c54b;
 		  border: none;
 		  border-radius: 15px;
           box-shadow: 0 9px #999;
-          margin-top: 45px;
-		  margin-bottom: 25px;
-          margin-right: 25px;
-          margin-left: 25px;
+          margin: 20px;
 		}
 
-		.button:hover {background-color: #3e8e41}
+        .button2 {
+		  padding: 5px 12px;
+		  font-size: 12px;
+		  text-align: center;
+		  cursor: pointer;
+		  outline: none;
+		  color: #fff;
+		  background-color: #359b39;
+		  border: none;
+		  border-radius: 12px;
+          box-shadow: 0 7px #999;
+          margin: 20px;
+		}
 
-		.button:active {
-		  background-color: #3e8e41;
+		.button:hover, .button2:hover {background-color: #377e39}
+
+		.button:active, .button2:active {
+		  background-color: #377e39;
 		  box-shadow: 0 5px #666;
 		  transform: translateY(4px);
 		}
@@ -90,9 +105,14 @@
         }
 
         .window {
-            overflow:hidden;
+            /* overflow:hidden; */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
-        .h4 {
+
+        .h1 {
             color:#4d8de0;
         }
     </style>
@@ -102,6 +122,14 @@
                 document.querySelector('body').classList.add('loaded');
             }, 300);
         });
+
+        function pageRedirect(pathToURL){
+            var delay = 500; // time in milliseconds
+
+            setTimeout(function(){
+                window.location = pathToURL;
+            },delay);
+        }
     </script>
     
 </head>
@@ -127,11 +155,11 @@
     </div>
     
     <!-- Main content -->
-        <a href="#firstWindow">1</a>
+        <!-- <a href="#firstWindow">1</a>
         <a href="#secondWindow">2</a>
         <a href="#thirdWindow">3</a>
         <a href="#fourthWindow">4</a>
-        <a href="#fifthWindow">5</a><br>
+        <a href="#fifthWindow">5</a><br> -->
 
         <div class="container window">
 
@@ -139,16 +167,12 @@
 
                 <div class="row row-grid align-items-center">
                     <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
-                        <div class="pt-4 pb-5">
+                        <div class="animate__animated animate__jackInTheBox animate__delay-1s pt-4 pb-5">
                             <img src="assets/img/intropic.png" class="img-fluid img-center" style="height: 250px;" alt="image" />
                         </div>
                         <div class="pt-4 pb-5">
-                            <a href="#secondWindow" class="button">
-                                <span class="btn-inner--text">PLAY</span>
-                            </a><br><br><br>
-                            <a href="#fifthWindow" class="button">
-                                <span class="btn-inner--text">OBSERVE</span>
-                            </a>  
+                            <input type='button' value='PLAY' class="animate__animated animate__pulse animate__infinite button" onclick='pageRedirect("#secondWindow")'><br>
+                            <input type='button' value='OBSERVE' class="button" onclick='pageRedirect("#fifthWindow")'>
                         </div>
                     </div>
                 </div>    
@@ -158,11 +182,14 @@
                 
                 <div class="row row-grid align-items-center">
                     <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
-                        <h4 class="h4 lh-130 mb-3">Choose level</h4>
+                        <h1 class="animate__animated animate__rubberBand h1 lh-130 mb-3">Choose level</h1>
                         <div class="pt-4 pb-5">
-                            <button class="button">Level 1</button><br>
-                            <button class="button">Level 2</button><br>
-                            <button class="button">Level 3</button>
+                            <input type='button' value='Level 1' class="animate__animated animate__pulse animate__infinite button" onclick='pageRedirect("#thirdWindow")'><br>
+                            <input type='button' value='Level 2' class="button" onclick='pageRedirect("#thirdWindow")'><br>
+                            <input type='button' value='Level 3' class="button" onclick='pageRedirect("#thirdWindow")'><br>
+                            <button class="button2" onclick='pageRedirect("#firstWindow")'>
+                                Return to<br>title screen.
+                            </button>
                         </div>
                     </div>   
                 </div>
@@ -173,14 +200,15 @@
 
                 <div class="row row-grid align-items-center">
                     <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
-                    <h4 class="h4 lh-130 mb-3">Setup</h4>
+                    <h1 class="animate__animated animate__rubberBand h1 lh-130 mb-3">Level setup</h1>
                         <div class="pt-4 pb-5">
                             <img src="" class="img-fluid img-center" style="height: 150px;" alt="image" />
                         </div>
                         <div class="pt-4 pb-5">
-                            <a href="#fourthWindow" class="button">
-                                <span class="btn-inner--text">OK</span>
-                            </a>   
+                            <input type='button' value='OK' class="animate__animated animate__pulse animate__infinite button" onclick='pageRedirect("#fourthWindow")'><br>
+                            <button class="button2" onclick='pageRedirect("#firstWindow")'>
+                                Return to<br>title screen.
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -191,15 +219,16 @@
 
                 <div class="row row-grid align-items-center"> 
                     <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
-                    <h4 class="h4 lh-130 mb-3">Instructions</h4>
+                    <h1 class="animate__animated animate__rubberBand h1 lh-130 mb-3">Instructions</h1>
                         <div class="pt-4 pb-5">
                             <img src="" class="img-fluid img-center" style="height: 150px;" alt="image" />
                         </div>
                         <p class="text-muted mb-0">....</p>
                         <div class="pt-4 pb-5">
-                            <a href="#" class="button">
-                                <span class="btn-inner--text">PLAY</span>
-                            </a>
+                            <input type='button' value='PLAY!' class="animate__animated animate__pulse animate__infinite button" onclick='pageRedirect("#fifthWindow")'><br>
+                            <button class="button2" onclick='pageRedirect("#firstWindow")'>
+                                Return to<br>title screen.
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -210,15 +239,16 @@
 
                 <div class="row row-grid align-items-center">
                     <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
-                    <h4 class="h4 lh-130 mb-3">Observe</h4>
+                    <h1 class="animate__animated animate__rubberBand h1 lh-130 mb-3">Observe</h1>
                         <div class="pt-4 pb-5">
                             <img src="" class="img-fluid img-center" style="height: 150px;" alt="image" />
                         </div> 
-                        <p class="text-muted mb-0">Please wait until the player finishes the setup. When player is ready, press OBSERVE</p>
+                        <p class="text-muted mb-0">....</p>
                         <div class="pt-4 pb-5">
-                            <a href="#" class="button">
-                                <span class="btn-inner--text">OBSERVE</span>
-                            </a>
+                            <input type='button' value='OBSERVE!' class="animate__animated animate__pulse animate__infinite button" onclick='pageRedirect("#fifthWindow")'><br>
+                            <button class="button2" onclick='pageRedirect("#firstWindow")'>
+                                Return to<br>title screen.
+                            </button>
                         </div>
                     </div>
                 </div>
