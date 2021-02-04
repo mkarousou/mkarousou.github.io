@@ -26,6 +26,15 @@
                 height: 0;
             }
         }
+        
+        body {
+            background-image: url("./assets/img/sci_fi_bg.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: #cccccc;
+        }
 
         body>div.preloader {
             position: fixed;
@@ -139,11 +148,16 @@
     <script>
         var sound = new Howl({
             src: ['./assets/sound/To_the_Next_DestinationLOOP.mp3'],
-            autoplay: true,
             loop: true,
+            volume: 0.5
+        });
+
+        var intro = new Howl({
+            autoplay: true,
+            src: ['./assets/sound/TECH_CHARGER_Power_Up_06.mp3'],
             volume: 0.5,
             onend: function() {
-                console.log('Finished!');
+                sound.play();
             }
         });
     </script>
@@ -168,7 +182,7 @@
                 <div class="row row-grid align-items-center">
                     <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
                         <div class="animate__animated animate__jackInTheBox animate__delay-1s pt-4 pb-5">
-                            <img src="assets/img/intropic.png" class="img-fluid img-center" style="height: 250px;" alt="image" />
+                            <img src="assets/img/intropic.png" class="img-fluid img-center" alt="image" />
                         </div>
                         <div class="pt-4 pb-5">
                             <input type='button' value='PLAY' class="animate__animated animate__pulse animate__infinite button" onclick='pageRedirect("#secondWindow")'><br>
