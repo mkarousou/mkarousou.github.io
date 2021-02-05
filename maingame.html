@@ -122,7 +122,10 @@
         }
 
         .h1 {
-            color:#4d8de0;
+            /* text-shadow:1px 0 0 rgb(255, 255, 255),0 1px 0 rgb(255, 255, 255),-1px 0 0 rgb(255, 255, 255),0 -1px 0 rgb(255, 255, 255); */
+            text-shadow:-1px 0 0 rgb(255, 255, 255), 0 1px 0 rgb(255, 255, 255);
+            font-size: xx-large;
+            color:#4d9ee0;
         }
     </style>
     <script>
@@ -130,6 +133,13 @@
             setTimeout(function() {
                 document.querySelector('body').classList.add('loaded');
             }, 300);
+        });
+
+        window.addEventListener("touchstart", function() {
+            if (window.location.href.includes("zeroWindow"))
+            {
+                window.location = "#firstWindow";
+            }
         });
 
         function pageRedirect(pathToURL){
@@ -176,6 +186,14 @@
         <a href="#fifthWindow">5</a><br> -->
 
         <div class="container window">
+
+            <div id="zeroWindow" class="window">
+                <div class="row row-grid align-items-center">
+                    <div class="col-12 col-md-5 col-lg-6 order-md-2 text-center">
+                        <h1 class="animate__animated animate__pulse animate__infinite h1 lh-130 mb-3">Tap anywhere to continue...</h1>
+                    </div>
+                </div>
+            </div>
 
             <div id="firstWindow" class="window">
 
@@ -284,6 +302,7 @@
             'height': '1em'
         })
     </script>
+    
 </body>
 
 </html>
